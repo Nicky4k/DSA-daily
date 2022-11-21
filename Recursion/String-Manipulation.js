@@ -1,3 +1,3 @@
 console.log("String Manipulation");
 
-const str = "amazon rin forest";
+const str = "amazon rain forest";
