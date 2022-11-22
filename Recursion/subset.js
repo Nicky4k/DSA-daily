@@ -3,7 +3,7 @@ console.log(
 );
 
 // Q1: find all the subsets of given string
-const string = "axb";
+const string = "aab";
 
 function subsetGenerator(string, subset = "") {
   if (string === "") return subset && console.log(subset);
