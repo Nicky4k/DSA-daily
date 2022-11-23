@@ -11,4 +11,4 @@ function dialer(string = "", dials) {
   return op;
 }
 
-console.log(dialer("", "22"));
+console.log(dialer("", "12"));
