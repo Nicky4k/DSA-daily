@@ -1,11 +1,12 @@
 function roll(choices, target) {
   if (target === 0) {
-    console.log(choices);
-    return;
+    return choices + " ";
   }
 
+  let arr = "";
   for (let i = 1; i <= 6 && i <= target; i++) {
-    roll(choices + i, target - i);
+    arr += roll(choices + i, target - i);
   }
+  return arr;
 }
-roll("", 4);
+console.log(roll("", 4));
