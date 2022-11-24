@@ -11,6 +11,6 @@ function maze(a, b, path) {
   if (b > 1) {
     maze(a, b - 1, path + "R");
   }
-  path = "";
 }
+
 maze(3, 3, "");
