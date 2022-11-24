@@ -1,5 +1,6 @@
 // Diagonal, Down, Right Maze with obstacle
 function diagonalMaze(a, b, board, path) {
+  // obstacle check
   if (!board[a][b]) return 0;
 
   if (a === board.length - 1 && b === board[0].length - 1) {
@@ -39,6 +40,7 @@ function diagonalMaze(a, b, board, path) {
 }
 const board = [
   [true, true, true],
+  [true, true, false],
   [true, true, true],
 ];
 console.log("number of path: ", diagonalMaze(0, 0, board, ""));
