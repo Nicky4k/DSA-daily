@@ -1,5 +1,16 @@
 console.log("Maze problem");
 
+// Number of paths
+function mazeCount(a, b, path) {
+  if (a === 1 || b === 1) {
+    return 1;
+  }
+  let left = mazeCount(a - 1, b);
+  let right = mazeCount(a, b - 1);
+  return left + right;
+}
+console.log("number of path: ", mazeCount(3, 3, ""));
+
 // Down and Right movement maze
 function maze(a, b, path) {
   if (a === 1 && b === 1) {
@@ -22,15 +33,19 @@ function diagonalMaze(a, b, path) {
     console.log(path);
     return 1;
   }
+  let left = 0;
+  let right = 0;
+  let diag = 0;
   if (a > 1) {
-    diagonalMaze(a - 1, b, path + "Down ");
+    left = diagonalMaze(a - 1, b, path + "Down ");
   }
   if (b > 1) {
-    diagonalMaze(a, b - 1, path + "Right ");
+    right = diagonalMaze(a, b - 1, path + "Right ");
   }
   if (a > 1 && b > 1) {
-    diagonalMaze(a - 1, b - 1, path + "Diagonal ");
+    diag = diagonalMaze(a - 1, b - 1, path + "Diagonal ");
   }
+  return left + right + diag;
 }
 
-diagonalMaze(3, 3, "");
+console.log("number of path: ", diagonalMaze(3, 3, ""));
